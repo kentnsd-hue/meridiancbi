@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights & Guides | Meridian Advisory</title>
+<meta name="description" content="Expert guides, analysis, and strategy on citizenship and residency by investment programs worldwide. Stay informed with Meridian Advisory.">
+<meta property="og:title" content="CBI Insights & Guides | Meridian Advisory">
+<meta property="og:url" content="https://meridiancbi.com/blog">
+<link rel="canonical" href="https://meridiancbi.com/blog">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --navy:#0a1628; --deep-blue:#0f2140; --gold:#c9a84c; --gold-light:#e4cc7a; --cream:#f5f0e8; --warm-white:#faf8f4; --slate:#94a3b8; --text-body:#64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Outfit',sans-serif; background:var(--warm-white); color:var(--navy); overflow-x:hidden; }
+nav { position:fixed; top:0; width:100%; z-index:1000; padding:0.8rem 4%; display:flex; justify-content:space-between; align-items:center; background:rgba(10,22,40,0.95); backdrop-filter:blur(20px); box-shadow:0 4px 30px rgba(0,0,0,0.15); }
+.logo { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:500; color:#fff; letter-spacing:0.05em; text-decoration:none; }
+.logo span { color:var(--gold); }
+.nav-links { display:flex; gap:2.5rem; align-items:center; list-style:none; }
+.nav-links a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.85rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.3s; }
+.nav-links a:hover { color:var(--gold); }
+.nav-cta { background:var(--gold)!important; color:var(--navy)!important; padding:0.6rem 1.5rem; border-radius:2px; font-weight:500!important; }
+.mobile-menu-btn { display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; }
+.mobile-menu-btn span { width:24px; height:2px; background:#fff; }
+
+.page-hero {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--deep-blue) 40%, #0b2a4a 100%);
+  padding: 9rem 4% 4rem;
+  text-align: center;
+}
+
+.page-hero .section-tag {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+
+.page-hero p {
+  color: var(--slate);
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.blog-section { padding: 4rem 4%; }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background: #fff;
+  border: 1px solid rgba(10,22,40,0.06);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(10,22,40,0.08);
+}
+
+.blog-card-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--navy), var(--deep-blue));
+  position: relative;
+}
+
+.blog-card-img::after {
+  content: attr(data-category);
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.blog-card-body { padding: 1.75rem; }
+
+.blog-card-date {
+  font-size: 0.7rem;
+  color: var(--text-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.blog-card p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.blog-card .read-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.blog-card .read-link::after { content: ' \2192'; }
+
+/* CTA */
+.cta-section { background:linear-gradient(160deg,var(--navy) 0%,#0b2a4a 50%,var(--deep-blue) 100%); padding:5rem 4%; text-align:center; }
+.cta-inner { max-width:600px; margin:0 auto; }
+.cta-section h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,2.5rem); font-weight:300; color:#fff; line-height:1.2; margin-bottom:1rem; }
+.cta-section h2 em { font-style:italic; color:var(--gold); }
+.cta-section p { color:var(--slate); margin-bottom:2rem; font-weight:300; line-height:1.7; }
+.btn-primary { background:var(--gold); color:var(--navy); padding:1rem 2.5rem; border:none; border-radius:2px; font-family:'Outfit',sans-serif; font-size:0.85rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-block; transition:all 0.3s; }
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,168,76,0.3); }
+.cta-note { margin-top:1rem; font-size:0.8rem; color:var(--slate); }
+
+/* Footer */
+footer { background:var(--navy); padding:3rem 4% 2rem; color:var(--slate); }
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; max-width:1200px; margin:0 auto; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.06); }
+.footer-brand p { font-size:0.8rem; color:var(--slate); margin-top:0.5rem; font-weight:300; max-width:300px; line-height:1.6; }
+.footer-links { display:flex; gap:3rem; }
+.footer-col h4 { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1rem; font-weight:500; }
+.footer-col a { display:block; color:var(--slate); text-decoration:none; font-size:0.85rem; margin-bottom:0.6rem; transition:color 0.3s; font-weight:300; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { max-width:1200px; margin:1.5rem auto 0; display:flex; justify-content:space-between; font-size:0.75rem; color:rgba(255,255,255,0.3); flex-wrap:wrap; gap:0.5rem; }
+
+.mobile-nav { display:none; position:fixed; inset:0; background:rgba(10,22,40,0.98); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:2rem; }
+.mobile-nav.open { display:flex; }
+.mobile-nav a { color:#fff; text-decoration:none; font-size:1.2rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:300; }
+.mobile-nav .close-btn { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer; }
+@media (max-width:900px) { .nav-links { display:none; } .mobile-menu-btn { display:flex; } .blog-grid { grid-template-columns:1fr; } .footer-links { gap:2rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Meridian <span>Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="/#programs">Programs</a></li>
+    <li><a href="/#why">Why Us</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/blog">Insights</a></li>
+    <li><a href="https://cal.com/rachel-ritfeld-z29zvz/30min" target="_blank" class="nav-cta">Book a Call</a></li>
+  </ul>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mobileNav" class="mobile-nav">
+  <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&#10005;</button>
+  <a href="/#programs" onclick="this.parentElement.classList.remove('open')">Programs</a>
+  <a href="/#why" onclick="this.parentElement.classList.remove('open')">Why Us</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="/blog" onclick="this.parentElement.classList.remove('open')">Insights</a>
+  <a href="https://cal.com/rachel-ritfeld-z29zvz/30min" target="_blank">Book a Consultation</a>
+</div>
+
+<header class="page-hero">
+  <span class="section-tag">Insights & Guides</span>
+  <h1>The Meridian <em>Journal</em></h1>
+  <p>Expert analysis, program guides, and strategic insights on citizenship and residency by investment.</p>
+</header>
+
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <a href="/blog/st-kitts-biometric-passport-deadline-2027" class="blog-card">
+      <div class="blog-card-img" data-category="Breaking" style="background:linear-gradient(135deg,#8b1a1a,#c0392b)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date" style="color:#e74c3c;font-weight:500">March 28, 2026</div>
+        <h3>St. Kitts Biometric Passport Deadline: What Every CBI Citizen Must Do Before July 2027</h3>
+        <p>Your St. Kitts CBI passport will stop working for international travel after July 31, 2027 unless you complete biometric enrollment. No grace period.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/caribbean-citizenship-by-investment-2026" class="blog-card">
+      <div class="blog-card-img" data-category="Guide"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>The Complete Guide to Caribbean Citizenship by Investment in 2026</h3>
+        <p>Everything you need to know about the five Caribbean CBI programs — costs, timelines, ECCIRA regulations, and which is right for you.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/us-visa-restrictions-cbi-2026" class="blog-card">
+      <div class="blog-card-img" data-category="Analysis" style="background:linear-gradient(135deg,#0b2a4a,#1a3a5c)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>US Visa Restrictions and CBI: What Investors Need to Know in 2026</h3>
+        <p>How new US visa bonds and immigrant visa suspensions affect Caribbean passport holders.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/new-cbi-programs-sao-tome-nauru-botswana" class="blog-card">
+      <div class="blog-card-img" data-category="Analysis" style="background:linear-gradient(135deg,#1a2744,#0f2140)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>New CBI Programs to Watch: São Tomé, Nauru, and Botswana</h3>
+        <p>Three emerging programs are shaking up the market with pricing under $100K.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/grenada-e2-visa-us-access" class="blog-card">
+      <div class="blog-card-img" data-category="Guide" style="background:linear-gradient(135deg,#0f2140,#162d50)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>Grenada's E-2 Treaty: The Only Caribbean Route to Living in the United States</h3>
+        <p>How Grenada's CBI program provides a unique pathway to US residency through the E-2 Investor Visa.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/why-entrepreneurs-second-passports-2026" class="blog-card">
+      <div class="blog-card-img" data-category="Strategy" style="background:linear-gradient(135deg,#0a1628,#1a3050)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>Why Entrepreneurs Are Getting Second Passports in 2026</h3>
+        <p>From tax optimization to travel freedom — why business owners see a second citizenship as essential.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/st-kitts-vs-dominica-vs-grenada" class="blog-card">
+      <div class="blog-card-img" data-category="Comparison"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>St. Kitts vs. Dominica vs. Grenada: Which Caribbean Passport Should You Choose?</h3>
+        <p>An honest side-by-side breakdown comparing costs, travel access, and who each is best for.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/malta-eu-citizenship-guide" class="blog-card">
+      <div class="blog-card-img" data-category="Guide" style="background:linear-gradient(135deg,#0b2a4a,#1a3a5c)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>Malta Citizenship by Investment: The Only Direct Route to an EU Passport</h3>
+        <p>How Malta's CBI program works, what it costs, and whether it's the right path to EU citizenship.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/second-citizenship-crypto-investors" class="blog-card">
+      <div class="blog-card-img" data-category="Strategy" style="background:linear-gradient(135deg,#1a2744,#0f2140)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>Second Citizenship for Crypto and Digital Asset Holders: A 2026 Guide</h3>
+        <p>Why cryptocurrency holders are pursuing second passports and which programs best serve them.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/cbi-due-diligence-explained" class="blog-card">
+      <div class="blog-card-img" data-category="Guide" style="background:linear-gradient(135deg,#0f2140,#162d50)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>CBI Due Diligence Explained: What Gets Checked and Why Applications Get Rejected</h3>
+        <p>What happens during CBI background checks and how to prepare for a successful application.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/cbi-donation-vs-real-estate" class="blog-card">
+      <div class="blog-card-img" data-category="Strategy" style="background:linear-gradient(135deg,#0a1628,#1a3050)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>CBI Donation vs. Real Estate Investment: Which Route Should You Choose?</h3>
+        <p>An honest comparison of the two main CBI investment routes with real cost analysis.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/portugal-golden-visa-2026" class="blog-card">
+      <div class="blog-card-img" data-category="Guide"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>Portugal Golden Visa in 2026: What's Changed and Is It Still Worth It?</h3>
+        <p>Portugal's Golden Visa after the real estate closure — the fund route and path to EU citizenship.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/cbi-for-families-dependents" class="blog-card">
+      <div class="blog-card-img" data-category="Guide" style="background:linear-gradient(135deg,#0b2a4a,#1a3a5c)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>Citizenship by Investment for Families: Which Programs Include the Most Dependents?</h3>
+        <p>A detailed comparison of family inclusion policies — who qualifies, age limits, and total costs.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/eccira-caribbean-regulation-2026" class="blog-card">
+      <div class="blog-card-img" data-category="Analysis" style="background:linear-gradient(135deg,#1a2744,#0f2140)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>ECCIRA and the Future of Caribbean CBI: What the New Regulations Mean</h3>
+        <p>How the new regulatory authority is reshaping citizenship by investment programs.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/cbi-myths-debunked" class="blog-card">
+      <div class="blog-card-img" data-category="Education" style="background:linear-gradient(135deg,#0f2140,#162d50)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>10 Common Myths About Citizenship by Investment — Debunked</h3>
+        <p>Separating fact from fiction on CBI — from cost misconceptions to due diligence realities.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+    <a href="/blog/cheapest-cbi-programs-2026" class="blog-card">
+      <div class="blog-card-img" data-category="Comparison" style="background:linear-gradient(135deg,#0a1628,#1a3050)"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">March 2026</div>
+        <h3>The Cheapest Citizenship by Investment Programs in 2026: Ranked</h3>
+        <p>A ranked comparison of the most affordable CBI programs — from $75K to $235K.</p>
+        <span class="read-link">Read More</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to Explore Your <em>Options?</em></h2>
+    <p>Book a free, confidential consultation. We'll assess your goals, recommend the best program, and outline a clear path forward.</p>
+    <a href="https://cal.com/rachel-ritfeld-z29zvz/30min" target="_blank" class="btn-primary">Book Your Free Consultation</a>
+    <p class="cta-note">30-minute consultation &middot; No obligation &middot; Completely confidential</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/" class="logo">Meridian <span>Advisory</span></a>
+      <p>Expert guidance on global citizenship and residency by investment programs.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col"><h4>Programs</h4><a href="/#programs">St. Kitts & Nevis</a><a href="/#programs">Grenada</a><a href="/#programs">Dominica</a><a href="/#programs">Malta</a><a href="/#programs">Portugal</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="/#about">About</a><a href="/blog">Insights</a><a href="https://cal.com/rachel-ritfeld-z29zvz/30min" target="_blank">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">LinkedIn</a><a href="#">Email Us</a><a href="#">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Meridian Advisory. All rights reserved.</span>
+    <span>For informational purposes only. Not legal or financial advice.</span>
+  </div>
+</footer>
+
+</body>
+</html>
